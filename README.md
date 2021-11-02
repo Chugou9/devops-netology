@@ -17,4 +17,4 @@ My repository for homework on devops course
 - 
   ~~~
     .terraformrc Исключить скрытый файл и 
-    terraform.rc вот этот файл
+    terraform.rc вот этот файлЭта строчка добавлена в README через перенаправление потока
