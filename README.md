@@ -71,3 +71,53 @@ Author: Martin Atkins <mart@degeneration.co.uk>
 
     achieved by -  git grep -n synchronizedWriters
                 - git log -L:synchronizedWriters:synchronized_writers.go:
+#3.1 Задание
+
+##3
+ - выбран Windows Terminal
+ - Подправлена PS1 PS1='[\t] | j\j | ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
+   - Добавлено время
+   - Текущие job в фоне
+   - Ввод новых команд с новой строки
+##5 Ресурсы VirtualBox по умолчанию
+   - Оперативная память: 1024Mb
+   - Процессоры: 2
+   - Видеопамять: 4Mb
+##6 Добавление ресурсов через vargrant-file
+   ~~~
+     config.vm.provider "virtualbox" do |v|
+        v.name = 'devops_netology'
+        v.memory = 1024
+        v.cpus = 2
+      end
+  ~~~
+##8 
+  - Длина журнала history задается переменной HISTSIZE. Это описано на 863 строке мануала man bash.
+  - ignoreboth - параметр переменной окружения HISTCONTROL, который позволяет
+    не писать в историю команды, начинающиеся с одного или нескольких пробелов, и
+    дублируемые команды.
+##9 
+  - {} используется в раскрытии скобок, также позволяет выполнить 
+  указанные внутри команды группой в текущей оболочке
+  - описано на 258 строчке в man bash и на 1092
+##10
+  - touch file{1..100000}
+  - 300 тыс. не удалось создать из-за ошибки Argument list too long. (Превышен максимальный размер стэка)
+##11
+  - [[ -d /tmp ]] - возвращает true, если файл существует и является директорией
+  - [[ -d /tmp ]] && echo 'Tmp is a directory'
+##12
+  ~~~
+  mkdir /tmp/new_path_directory
+  cp /bin/bash /tmp/new_path_directory
+  PATH=/tmp/new_path_directory:$PATH
+  type -a bash
+  ~~~
+##13
+  - at - утилита, позволяющая планировать выполнение команд
+  - batch == at -b - планирует выполнение команд только, если позволяет уровень загрузки системы. По умолчанию 1.5.
+##14
+  - exit 1
+  - vagrant suspend
+
+   
